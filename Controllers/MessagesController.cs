@@ -39,6 +39,8 @@ namespace SimpleBot
         async Task HandleActivityAsync(Activity activity)
         {
             string text = activity.Text;
+            ArmazenaChat aa = new ArmazenaChat();
+            aa.armazenaMensagem(text);
             string userFromId = activity.From.Id;
             string userFromName = activity.From.Name;
 
