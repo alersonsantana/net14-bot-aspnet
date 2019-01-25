@@ -40,12 +40,11 @@ namespace SimpleBot
         {
             string text = activity.Text;
             ArmazenaChat aa = new ArmazenaChat();
-            aa.armazenaMensagem(text);
             string userFromId = activity.From.Id;
             string userFromName = activity.From.Name;
 
             var message = new SimpleMessage(userFromId, userFromName, text);
-
+            aa.armazenaMensagem(message);
             string response = g_bot.Reply(message);
 
             await ReplyUserAsync(activity, response);
